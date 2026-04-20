@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776477265315-p16yr9vvd",
+  "providerId": "claude",
+  "title": "Understand GitHub and Git basics",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776477265315,
+  "updatedAt": 1776490503222,
+  "lastResponseAt": 1776478481875,
+  "sessionId": "d6d2e6c0-79f3-46fa-a3d2-0e2fa73b9ec0",
+  "providerState": {
+    "providerSessionId": "d6d2e6c0-79f3-46fa-a3d2-0e2fa73b9ec0"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 10,
+    "cacheCreationInputTokens": 1090,
+    "cacheReadInputTokens": 38477,
+    "contextWindow": 200000,
+    "contextTokens": 39577,
+    "percentage": 20,
+    "contextWindowIsAuthoritative": true
+  }
+}

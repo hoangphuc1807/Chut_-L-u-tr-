@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776478624368-0ixk0faqj",
+  "providerId": "claude",
+  "title": "Resume closed discussion threads",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776478624368,
+  "updatedAt": 1776490492935,
+  "lastResponseAt": 1776490252196,
+  "sessionId": "238cfcf2-6416-45f1-9b29-b09beceadb8c",
+  "providerState": {
+    "providerSessionId": "238cfcf2-6416-45f1-9b29-b09beceadb8c"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 8,
+    "cacheCreationInputTokens": 1135,
+    "cacheReadInputTokens": 147968,
+    "contextWindow": 200000,
+    "contextTokens": 149111,
+    "percentage": 75,
+    "contextWindowIsAuthoritative": true
+  }
+}

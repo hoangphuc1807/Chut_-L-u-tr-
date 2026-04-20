@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776489048345-ji5lg33ls",
+  "providerId": "claude",
+  "title": "Evaluate initiatives with scoring criteria",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776489048345,
+  "updatedAt": 1776491554703,
+  "lastResponseAt": 1776491554703,
+  "sessionId": "c538a51b-1c62-4d85-a932-92704cfde9fa",
+  "providerState": {
+    "providerSessionId": "c538a51b-1c62-4d85-a932-92704cfde9fa"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 8,
+    "cacheCreationInputTokens": 808,
+    "cacheReadInputTokens": 70040,
+    "contextWindow": 200000,
+    "contextTokens": 70856,
+    "percentage": 35,
+    "contextWindowIsAuthoritative": true
+  }
+}

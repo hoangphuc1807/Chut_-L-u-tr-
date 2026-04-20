@@ -1,0 +1,23 @@
+{
+  "id": "conv-1776427299649-ppj6gltuh",
+  "providerId": "claude",
+  "title": "Keep color theme on left sidebar",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776427299650,
+  "updatedAt": 1776477231449,
+  "lastResponseAt": 1776428060537,
+  "sessionId": "bf1cfb8d-1322-460c-8f15-0ab4474c0511",
+  "providerState": {
+    "providerSessionId": "bf1cfb8d-1322-460c-8f15-0ab4474c0511"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 8,
+    "cacheCreationInputTokens": 363,
+    "cacheReadInputTokens": 60392,
+    "contextWindow": 200000,
+    "contextTokens": 60763,
+    "percentage": 30,
+    "contextWindowIsAuthoritative": true
+  }
+}

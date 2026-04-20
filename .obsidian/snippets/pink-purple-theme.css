@@ -1,0 +1,676 @@
+/* ╔══════════════════════════════════════════════════════════════╗ */
+/* ║         PINK & PURPLE CUSTOM THEME FOR OBSIDIAN             ║ */
+/* ║              Pastel Pink + Purple Aesthetic                 ║ */
+/* ╚══════════════════════════════════════════════════════════════╝ */
+
+:root {
+  /* ═══ PRIMARY COLORS - CLEAN PASTELS ═══ */
+  --primary-mint: #d0f0e8;
+  --primary-blue: #c6dff8;
+  --primary-mauve: #dcd4e8;
+  --primary-pink: #f0d5e3;
+  --primary-cream: #f5ead8;
+
+  /* ═══ SECONDARY COLORS ═══ */
+  --accent-mint-dark: #0f6b57;
+  --accent-blue-dark: #1e40af;
+  --accent-mauve-dark: #5b3a8a;
+  --text-dark: #2d3d2d;
+  --text-muted: #6b7a6b;
+
+  /* ═══ BACKGROUNDS ═══ */
+  --bg-sidebar: #f8f6f3;
+  --bg-main: #faf9f7;
+  --bg-elevated: #ffffff;
+  --bg-hover: #d0f0e8;
+
+  /* ═══ OVERRIDE OBSIDIAN VARIABLES ═══ */
+  --color-base-0: #ffffff;
+  --color-base-10: #f3e8ff;
+  --color-base-20: #e9d5ff;
+  --color-base-30: #ddd6fe;
+  --color-base-100: #1f2937;
+
+  --color-accent: #d946a6;
+  --color-accent-rgb: 217, 70, 166;
+
+  --text-normal: #1f2937;
+  --text-muted: #9ca3af;
+  --text-faint: #d1d5db;
+
+  --interactive-accent: #d946a6;
+  --interactive-accent-rgb: 217, 70, 166;
+  --interactive-accent-hover: #be185d;
+
+  --background-primary: #fdf2f8;
+  --background-secondary: #f3e8ff;
+  --background-secondary-alt: #e9d5ff;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* SIDEBAR STYLING */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.sidebar {
+  background-color: #f8f6f3;
+}
+
+.nav-folder,
+.nav-file {
+  color: #1f2937;
+}
+
+.nav-folder-title,
+.nav-file-title {
+  color: #1f2937;
+}
+
+.nav-folder-title:hover,
+.nav-file-title:hover {
+  background-color: rgba(30, 64, 175, 0.1);
+  color: #1e40af;
+}
+
+.nav-folder.is-collapsed > .nav-folder-title,
+.nav-folder.is-collapsed:hover > .nav-folder-title {
+  background-color: transparent;
+}
+
+.nav-folder.mod-root > .nav-folder-title {
+  color: #be185d;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* MULTI-COLOR FOLDERS - EACH FOLDER DIFFERENT COLOR */
+/* ═══════════════════════════════════════════════════════════════ */
+
+/* Folder 1 - Mint/Teal */
+.nav-folder:nth-child(1) > .nav-folder-title {
+  background-color: #d0f0e8;
+  color: #0f6b57;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 2 - Light Blue */
+.nav-folder:nth-child(2) > .nav-folder-title {
+  background-color: #c6dff8;
+  color: #1e40af;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 3 - Mauve/Purple */
+.nav-folder:nth-child(3) > .nav-folder-title {
+  background-color: #dcd4e8;
+  color: #5b3a8a;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 4 - Soft Pink */
+.nav-folder:nth-child(4) > .nav-folder-title {
+  background-color: #f0d5e3;
+  color: #8b3a62;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 5 - Cream/Vanilla */
+.nav-folder:nth-child(5) > .nav-folder-title {
+  background-color: #f5ead8;
+  color: #7a5a2a;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 6 - Pale Green */
+.nav-folder:nth-child(6) > .nav-folder-title {
+  background-color: #ddeede;
+  color: #386634;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 7 - Soft Lavender */
+.nav-folder:nth-child(7) > .nav-folder-title {
+  background-color: #e8dff5;
+  color: #5d4e85;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 8 - Pale Peach */
+.nav-folder:nth-child(8) > .nav-folder-title {
+  background-color: #f5d9cc;
+  color: #8a4b2a;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 9 - Light Cyan */
+.nav-folder:nth-child(9) > .nav-folder-title {
+  background-color: #d4ecf0;
+  color: #0d656b;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 10 - Powder Blue */
+.nav-folder:nth-child(10) > .nav-folder-title {
+  background-color: #d9e5f0;
+  color: #2d5080;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 11 - Soft Rose */
+.nav-folder:nth-child(11) > .nav-folder-title {
+  background-color: #f0d9e3;
+  color: #8b3a62;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 12 - Light Sage */
+.nav-folder:nth-child(12) > .nav-folder-title {
+  background-color: #e0eada;
+  color: #4a6741;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 13 - Pale Mint */
+.nav-folder:nth-child(13) > .nav-folder-title {
+  background-color: #dff0e8;
+  color: #2d6b5f;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 14 - Soft Mauve */
+.nav-folder:nth-child(14) > .nav-folder-title {
+  background-color: #e4daf0;
+  color: #6b5694;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Folder 15+ - Cycle back to colors */
+.nav-folder:nth-child(15) > .nav-folder-title {
+  background-color: #d0f0e8;
+  color: #0f6b57;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+
+/* Hover effect cho colored folders */
+.nav-folder > .nav-folder-title:hover {
+  opacity: 0.8;
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* MAIN CONTENT AREA */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.workspace-split.mod-root .workspace-leaf {
+  background-color: #faf9f7;
+}
+
+.markdown-preview-view,
+.markdown-source-view {
+  background-color: #faf9f7;
+  color: #2d3d2d;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* HEADINGS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view h1,
+.markdown-source-view .cm-header-1,
+.HyperMD-header-1 {
+  color: #0f6b57;
+  font-weight: 700;
+}
+
+.markdown-preview-view h2,
+.markdown-source-view .cm-header-2,
+.HyperMD-header-2 {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.markdown-preview-view h3,
+.markdown-source-view .cm-header-3,
+.HyperMD-header-3 {
+  color: #5b3a8a;
+  font-weight: 600;
+}
+
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  color: #8b3a62;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* HIGHLIGHTS & EMPHASIS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view mark {
+  background-color: #f5ead8;
+  color: #2d3d2d;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+/* Bold */
+.markdown-preview-view strong,
+.cm-strong {
+  color: #0f6b57;
+  font-weight: 700;
+}
+
+/* Italic */
+.markdown-preview-view em,
+.cm-em {
+  color: #1e40af;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* LINKS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view a,
+.cm-link {
+  color: #1e40af;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.markdown-preview-view a:hover,
+.cm-link:hover {
+  color: #0f6b57;
+  text-decoration: underline;
+}
+
+.internal-link {
+  color: #1e40af;
+}
+
+.internal-link:hover {
+  color: #0f6b57;
+  background-color: rgba(30, 64, 175, 0.08);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* BLOCKQUOTES & CODE */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view blockquote {
+  border-left: 3px solid #1e40af;
+  background-color: #c6dff8;
+  color: #2d3d2d;
+  padding: 8px 12px;
+  border-radius: 2px;
+}
+
+.markdown-preview-view code {
+  background-color: #d0f0e8;
+  color: #0f6b57;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Menlo', 'Courier New', monospace;
+}
+
+.markdown-preview-view pre {
+  background-color: #dcd4e8;
+  border: 1px solid #5b3a8a;
+  color: #2d3d2d;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.markdown-preview-view pre code {
+  background-color: transparent;
+  color: #5b3a8a;
+  padding: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* LISTS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+  color: #2d3d2d;
+}
+
+.markdown-preview-view li::marker {
+  color: #1e40af;
+}
+
+.task-list-item {
+  color: #2d3d2d;
+}
+
+.task-list-item-checkbox {
+  accent-color: #0f6b57;
+  cursor: pointer;
+}
+
+.task-list-item.is-checked {
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* TABLES */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view table {
+  border-collapse: collapse;
+}
+
+.markdown-preview-view table th {
+  background-color: #1e40af;
+  color: #ffffff;
+  padding: 8px;
+  font-weight: 600;
+}
+
+.markdown-preview-view table td {
+  border: 1px solid #d0f0e8;
+  padding: 8px;
+  color: #2d3d2d;
+}
+
+.markdown-preview-view table tr:nth-child(even) {
+  background-color: #c6dff8;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* BUTTONS & INTERACTIVE ELEMENTS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.button,
+button {
+  background-color: #1e40af;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.button:hover,
+button:hover {
+  background-color: #0f6b57;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* INPUT FIELDS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+input[type="text"],
+input[type="search"],
+textarea {
+  background-color: #ffffff;
+  border: 1px solid #1e40af;
+  color: #2d3d2d;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  border-color: #0f6b57;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.15);
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* SETTINGS & PANELS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.setting-item {
+  border-bottom: 1px solid #d0f0e8;
+  padding: 12px 0;
+}
+
+.setting-item-name {
+  color: #2d3d2d;
+  font-weight: 500;
+}
+
+.setting-item-description {
+  color: #6b7a6b;
+  font-size: 0.85em;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* SEARCH & COMMAND PALETTE */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.search-input-container input,
+.prompt-input {
+  background-color: #ffffff;
+  border: 2px solid #1e40af;
+  color: #2d3d2d;
+}
+
+.search-input-container input:focus,
+.prompt-input:focus {
+  border-color: #0f6b57;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.15);
+}
+
+.suggestion-item.is-selected {
+  background-color: #c6dff8;
+  color: #0f6b57;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* TABS & WINDOWS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.workspace-tab-header {
+  border-bottom: 2px solid #d0f0e8;
+  color: #6b7a6b;
+}
+
+.workspace-tab-header.is-active {
+  border-bottom-color: #1e40af;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.workspace-tab-header:hover {
+  background-color: rgba(30, 64, 175, 0.06);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* MODALS & POPOVERS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.modal {
+  background-color: #faf9f7;
+  border: 2px solid #1e40af;
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.15);
+}
+
+.modal-title {
+  color: #0f6b57;
+  font-weight: 700;
+}
+
+.modal-content {
+  color: #2d3d2d;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* STATUS BAR */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.status-bar {
+  background-color: #f8f6f3;
+  border-top: 1px solid #1e40af;
+  color: #2d3d2d;
+}
+
+.status-bar-item {
+  color: #6b7a6b;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* SCROLLBARS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f8f6f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1e40af;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0f6b57;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* EDITOR MODE SPECIFIC */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.cm-editor {
+  background-color: #faf9f7;
+  color: #2d3d2d;
+}
+
+.cm-gutters {
+  background-color: #f8f6f3;
+  border-right: 1px solid #1e40af;
+}
+
+.cm-lineNumbers .cm-gutterMarker {
+  color: #1e40af;
+}
+
+.cm-cursor {
+  border-left: 2px solid #1e40af;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* SELECTION & HIGHLIGHT */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.cm-selectionBackground,
+.cm-selection {
+  background-color: rgba(30, 64, 175, 0.2) !important;
+}
+
+.obsidian-highlight {
+  background-color: #f5ead8;
+  color: #2d3d2d;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* CALLOUTS (nếu có plugin) */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.callout {
+  border-left: 4px solid #1e40af;
+  background-color: #c6dff8;
+  color: #2d3d2d;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 12px 0;
+}
+
+.callout-title {
+  color: #0f6b57;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* SEARCH RESULTS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.search-result-file-title {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.search-result-file-matched-text {
+  background-color: #f5ead8;
+  color: #2d3d2d;
+  padding: 0 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* RIBBON & LEFT SIDEBAR */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.side-dock-ribbon {
+  background-color: #f8f6f3;
+}
+
+.side-dock-ribbon-action {
+  color: #6b7a6b;
+}
+
+.side-dock-ribbon-action:hover,
+.side-dock-ribbon-action.is-active {
+  color: #1e40af;
+  background-color: rgba(30, 64, 175, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
