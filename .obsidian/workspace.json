@@ -221,8 +221,9 @@
       "agent-client:Open agent client": false
     }
   },
-  "active": "48fe67dd7819537f",
+  "active": "cd49486ffbdcf077",
   "lastOpenFiles": [
+    "auto-sync.sh",
     "Source Doc/README.md",
     "references/idea-analysis-template.md",
     "references",
@@ -258,7 +259,6 @@
     "Notes/_Example - Learning Research/CODE_EXAMPLES.md",
     "Notes/_Example - Learning Research/KEY_INSIGHTS.md",
     "Notes/_Example - Learning Research/README.md",
-    "Projects/_Example - Software Project/TASKS.md",
     "Untitled 3.canvas",
     "Untitled 2.canvas",
     "Untitled 1.canvas",

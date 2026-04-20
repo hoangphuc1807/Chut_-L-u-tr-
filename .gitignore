@@ -34,3 +34,7 @@ build/
 
 # Cache
 .cache/
+
+# Auto-sync logs
+.auto-sync.log
+.auto-sync-error.log

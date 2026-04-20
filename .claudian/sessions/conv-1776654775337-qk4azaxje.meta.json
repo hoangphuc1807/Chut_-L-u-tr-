@@ -4,20 +4,20 @@
   "title": "Sync vault and theme to GitHub",
   "titleGenerationStatus": "success",
   "createdAt": 1776654775338,
-  "updatedAt": 1776654787700,
-  "lastResponseAt": 1776654787700,
+  "updatedAt": 1776655302788,
+  "lastResponseAt": 1776655302788,
   "sessionId": "4b95a48c-c67a-4e8a-b8ad-4914e4a294dd",
   "providerState": {
     "providerSessionId": "4b95a48c-c67a-4e8a-b8ad-4914e4a294dd"
   },
   "usage": {
     "model": "haiku",
-    "inputTokens": 8,
-    "cacheCreationInputTokens": 527,
-    "cacheReadInputTokens": 24751,
+    "inputTokens": 10,
+    "cacheCreationInputTokens": 608,
+    "cacheReadInputTokens": 36483,
     "contextWindow": 200000,
-    "contextTokens": 25286,
-    "percentage": 13,
+    "contextTokens": 37101,
+    "percentage": 19,
     "contextWindowIsAuthoritative": true
   }
 }
