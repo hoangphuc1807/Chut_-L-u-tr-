@@ -1,0 +1,213 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║           AMAZON SCRAPER + SUPABASE + METABASE INTEGRATION                 ║
+║                         QUICK REFERENCE CARD                               ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┌─ SETUP STEPS ─────────────────────────────────────────────────────────────┐
+│                                                                             │
+│  1. SUPABASE (5 min)                                                       │
+│     ├─ Go to https://supabase.com                                         │
+│     ├─ Create project                                                      │
+│     ├─ Copy URL + Anon Key from Settings → API                            │
+│     ├─ SQL Editor → Run SUPABASE_SCHEMA.sql                              │
+│     └─ Verify: 2 tables created                                           │
+│                                                                             │
+│  2. EXTENSION CONFIG (2 min)                                               │
+│     ├─ Reload extension (chrome://extensions)                            │
+│     ├─ Open popup → ⚙️ Supabase Settings                                  │
+│     ├─ Paste URL + Key                                                     │
+│     ├─ Click 💾 Lưu                                                        │
+│     └─ Click 🔌 Test kết nối ✅                                            │
+│                                                                             │
+│  3. METABASE (5 min)                                                       │
+│     ├─ Run: docker run -d -p 3000:3000 metabase/metabase                │
+│     ├─ Open: http://localhost:3000                                        │
+│     ├─ Admin → Add Database → PostgreSQL                                  │
+│     ├─ Fill: Host, Port, DB, User, Password (from Supabase)             │
+│     ├─ Test Connection                                                     │
+│     └─ Create dashboards from SQL queries                                 │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─ WORKFLOW: EACH TIME YOU SCRAPE ──────────────────────────────────────────┐
+│                                                                             │
+│   [Extension Popup]                                                        │
+│         ↓                                                                   │
+│   Enter Keywords                                                           │
+│         ↓                                                                   │
+│   Click "🚀 Bắt đầu cào"                                                   │
+│         ↓                                                                   │
+│   Extension starts scraping (Firefox tab opens)                            │
+│         ↓                                                                   │
+│   Extraction → 1 session + N products                                      │
+│         ↓                                                                   │
+│   ┌─────────────────────┬─────────────────────┐                           │
+│   │  Save to Browser    │   Push to Supabase  │                           │
+│   │  Storage (Excel)    │   (NEW!)            │                           │
+│   └─────────────────────┴─────────────────────┘                           │
+│         ↓                                                                   │
+│   [Popup shows ✅]       [Supabase shows data]                             │
+│                               ↓                                             │
+│                          [Metabase dashboard]                              │
+│                               ↓                                             │
+│                       [Team sees live charts]                              │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─ KEY CREDENTIALS TO SAVE ─────────────────────────────────────────────────┐
+│                                                                             │
+│  SUPABASE (for Extension):                                                │
+│  ├─ Project URL:    https://xxxxx.supabase.co                            │
+│  └─ Anon Key:       eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...            │
+│                                                                             │
+│  SUPABASE (for Metabase):                                                 │
+│  ├─ Host:           db.xxxxx.supabase.co                                 │
+│  ├─ Port:           5432                                                   │
+│  ├─ Database:       postgres                                              │
+│  ├─ Username:       postgres                                              │
+│  └─ Password:       (from Supabase Settings → Database)                   │
+│                                                                             │
+│  METABASE:                                                                │
+│  └─ URL:            http://localhost:3000                                │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─ FILES OVERVIEW ──────────────────────────────────────────────────────────┐
+│                                                                             │
+│  MODIFIED:                                                                 │
+│  ├─ manifest.json          → host_permissions + Supabase                 │
+│  ├─ background.js          → getSupabaseConfig() + pushToSupabase()      │
+│  ├─ popup.html             → Settings section                             │
+│  └─ popup.js               → Config handlers                              │
+│                                                                             │
+│  CREATED:                                                                  │
+│  ├─ SUPABASE_SCHEMA.sql    → SQL to create tables                        │
+│  ├─ SUPABASE_INTEGRATION_GUIDE.md  → Step-by-step checklist             │
+│  ├─ METABASE_SETUP.md      → Installation + queries                      │
+│  ├─ README_SUPABASE.md     → Overview (detailed)                         │
+│  └─ QUICK_REFERENCE.txt    → This file                                   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─ DATA FLOW DIAGRAM ───────────────────────────────────────────────────────┐
+│                                                                             │
+│   CHROME EXTENSION                  SUPABASE DATABASE     METABASE        │
+│   ┌──────────────────┐              ┌────────────────┐    ┌─────────────┐│
+│   │ Scrape Keywords  │              │ sessions       │    │ Dashboard   ││
+│   │ Extract Products │──POST/JSON─→ │ (session data) │◄──│ Charts      ││
+│   │                  │              │                │ SQL │             ││
+│   │ Save to:         │              │ products       │     │ Tables      ││
+│   │ • Excel (chrome) │              │ (product data) │     │ Reports     ││
+│   │ • Supabase (new!)│              │                │     │             ││
+│   └──────────────────┘              └────────────────┘     └─────────────┘│
+│        (popup)                           (cloud)              (web)        │
+│                                                                             │
+│   EACH SCRAPE:                                                             │
+│   1. Popup sends START_SCRAPE message                                     │
+│   2. Background extracts data to allData[]                                │
+│   3. Calls saveSession() → chrome.storage.local                           │
+│   4. Calls pushToSupabase() → REST API to Supabase ← NEW!               │
+│   5. If pushToSupabase fails → Silently continues (no crash)            │
+│   6. Metabase auto-refreshes → Team sees new data                        │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─ METABASE DASHBOARD IDEAS ────────────────────────────────────────────────┐
+│                                                                             │
+│  Dashboard 1: OVERVIEW                                                     │
+│  ├─ Total Products by Keyword                                             │
+│  ├─ Organic vs Sponsored (pie chart)                                      │
+│  ├─ Price Distribution (histogram)                                        │
+│  └─ Average Stars by Keyword                                              │
+│                                                                             │
+│  Dashboard 2: SELLER INTELLIGENCE                                         │
+│  ├─ Top 10 Sellers                                                        │
+│  ├─ Seller by Type (Organic/Sponsored)                                    │
+│  ├─ Seller Ratings Distribution                                           │
+│  └─ New Sellers This Month                                                │
+│                                                                             │
+│  Dashboard 3: PRODUCT TRENDS                                              │
+│  ├─ Most Popular ASIN (appears in many keywords)                          │
+│  ├─ ASIN Rank Over Time (if scraping multiple times)                      │
+│  ├─ New Products                                                          │
+│  └─ Price Changes                                                         │
+│                                                                             │
+│  Dashboard 4: DATA QUALITY                                                │
+│  ├─ Missing Data % (price, stars, reviews)                                │
+│  ├─ Scrape Summary                                                        │
+│  ├─ Sessions Count                                                        │
+│  └─ Last Updated (most recent scrape)                                     │
+│                                                                             │
+│  SQL EXAMPLES: See METABASE_SETUP.md                                      │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─ TROUBLESHOOTING QUICK FIXES ─────────────────────────────────────────────┐
+│                                                                             │
+│  ❌ "Test kết nối" fails                                                  │
+│  ✓ Check URL: https://xxxxx.supabase.co (with https://)                  │
+│  ✓ Check Key: Paste from Settings → API (full string)                    │
+│                                                                             │
+│  ❌ Scrape completes but no Supabase data                                 │
+│  ✓ Open DevTools (F12) → Console → Look for [Supabase] messages          │
+│  ✓ Refresh Metabase: Admin → Database → Refresh table metadata           │
+│                                                                             │
+│  ❌ Metabase "Connection refused"                                         │
+│  ✓ Check Docker: docker ps | grep metabase                               │
+│  ✓ Restart: docker restart metabase                                      │
+│                                                                             │
+│  ❌ Metabase "password authentication failed"                             │
+│  ✓ Get password from Supabase → Settings → Database → Copy password      │
+│  ✓ Use username: postgres (exactly)                                       │
+│                                                                             │
+│  ❌ Extension crashes on popup                                            │
+│  ✓ Reload: chrome://extensions → Reload button                           │
+│  ✓ Check console: F12 → Errors tab                                       │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─ IMPORTANT SECURITY NOTES ────────────────────────────────────────────────┐
+│                                                                             │
+│  ⚠️  Anon Key (in extension):                                              │
+│  ├─ Use for INSERT only (can't delete data)                               │
+│  ├─ Safe to share within team                                             │
+│  └─ If leaked: Regenerate in Supabase Settings                            │
+│                                                                             │
+│  🔒  Service Key (don't use in extension):                                │
+│  ├─ Has full permissions (CREATE, DELETE, UPDATE)                         │
+│  ├─ Keep secret                                                           │
+│  └─ For backend only                                                      │
+│                                                                             │
+│  💾  Credentials stored in:                                               │
+│  └─ chrome.storage.local (encrypted by browser)                           │
+│  └─ NOT in files → NOT hardcoded → NOT on GitHub                         │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─ NEXT STEPS ──────────────────────────────────────────────────────────────┐
+│                                                                             │
+│  IMMEDIATE:                                                               │
+│  1. Read README_SUPABASE.md (5 min)                                       │
+│  2. Follow SUPABASE_INTEGRATION_GUIDE.md checklist (15 min)              │
+│  3. Test with 1 scrape (3 min)                                            │
+│                                                                             │
+│  SHORT-TERM:                                                              │
+│  1. Create 4 Metabase dashboards (see examples above)                    │
+│  2. Train team on dashboard                                               │
+│  3. Set up scheduled reports (optional)                                   │
+│                                                                             │
+│  LONG-TERM:                                                               │
+│  1. Automate daily scrapes                                                │
+│  2. Add Slack/Email alerts                                                │
+│  3. Advanced analytics (competitor tracking, price trends)                │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+═════════════════════════════════════════════════════════════════════════════
+
+   For detailed help, see:
+   • SUPABASE_INTEGRATION_GUIDE.md (step-by-step)
+   • METABASE_SETUP.md (installation + queries)
+   • README_SUPABASE.md (complete overview)
+
+═════════════════════════════════════════════════════════════════════════════

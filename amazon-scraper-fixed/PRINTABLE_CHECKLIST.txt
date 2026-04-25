@@ -1,0 +1,237 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                      AMAZON SCRAPER SETUP CHECKLIST                           ║
+║                          PRINT THIS PAGE!                                     ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+DATE STARTED: ________________    TIME STARTED: ________________
+
+════════════════════════════════════════════════════════════════════════════════
+
+PHASE 1: SUPABASE SETUP (5 minutes) ⏱️
+
+  STEP 1.1: Create Project
+    ☐ Go to https://supabase.com
+    ☐ Click "Start your project"
+    ☐ Sign in / Create account
+    ☐ Create new project: "amazon-scraper"
+    ☐ Set password: ____________________________
+    ☐ Wait 1-2 minutes
+    ☐ Project dashboard shows
+
+  STEP 1.2: Copy Credentials
+    ☐ Go to Settings → API
+    ☐ Copy Project URL: https://_____________________.supabase.co
+    ☐ Copy Anon Key: ___________________________________________________
+    ☐ Save in safe place
+
+  STEP 1.3: Create Tables
+    ☐ Open: ~/Documents/amazon-scraper-fixed/SUPABASE_SCHEMA.sql
+    ☐ Copy ALL SQL code
+    ☐ Supabase → SQL Editor → New query
+    ☐ Paste SQL
+    ☐ Click "Run"
+    ☐ See "Success" message
+
+  STEP 1.4: Verify
+    ☐ Click "Table Editor"
+    ☐ Table "sessions" exists ✓
+    ☐ Table "products" exists ✓
+
+  ✅ PHASE 1 COMPLETE!  Time: ______ minutes
+
+════════════════════════════════════════════════════════════════════════════════
+
+PHASE 2: CONFIGURE EXTENSION (2 minutes) ⏱️
+
+  STEP 2.1: Reload Extension
+    ☐ Open Chrome
+    ☐ Go to: chrome://extensions/
+    ☐ Find "Amazon Product Scraper"
+    ☐ Click "Reload" button
+    ☐ No red errors
+
+  STEP 2.2: Open Settings
+    ☐ Click extension icon (top-right)
+    ☐ Click popup
+    ☐ Scroll down
+    ☐ Click "⚙️ Supabase Settings"
+    ☐ Settings section expands
+
+  STEP 2.3: Enter Credentials
+    ☐ Field "Project URL":
+      Paste: https://_____________________.supabase.co
+    
+    ☐ Field "Anon Key":
+      Paste: _____________________________________
+
+  STEP 2.4: Save & Test
+    ☐ Click "💾 Lưu"
+    ☐ Green ✅ "Đã lưu!" shows
+    ☐ Click "🔌 Test kết nối"
+    ☐ Green ✅ "Kết nối thành công!" shows
+
+  ✅ PHASE 2 COMPLETE!  Time: ______ minutes
+
+════════════════════════════════════════════════════════════════════════════════
+
+PHASE 3: TEST INTEGRATION (3 minutes) ⏱️
+
+  STEP 3.1: Run Scrape
+    ☐ Extension popup
+    ☐ Type keyword: "gift for mom"
+    ☐ Set to "1 trang"
+    ☐ Click "🚀 Bắt đầu cào dữ liệu"
+    ☐ Wait 2-3 minutes
+    ☐ Green ✅ "Hoàn tất!" shows
+
+  STEP 3.2: Check Console
+    ☐ Press F12 (DevTools)
+    ☐ Click "Console" tab
+    ☐ Search for: [Supabase] ✅
+    ☐ Message shows: "Pushed XXX products"
+    ☐ No red ❌ errors
+
+  STEP 3.3: Verify Data
+    ☐ Go to Supabase tab
+    ☐ Click "Table Editor"
+    ☐ Click "sessions":
+      ☐ See 1 new row
+      ☐ Has id field
+      ☐ Has keywords field
+      ☐ Has total_products field
+
+    ☐ Click "products":
+      ☐ See ~30 new rows
+      ☐ Each has: asin, title, price, stars
+      ☐ Numbers make sense
+
+  ✅ PHASE 3 COMPLETE!  Time: ______ minutes
+
+════════════════════════════════════════════════════════════════════════════════
+
+PHASE 4: METABASE SETUP (OPTIONAL - 5 minutes) ⏱️
+
+  STEP 4.1: Install & Start
+    ☐ Open Terminal
+    ☐ Run: docker run -d -p 3000:3000 metabase/metabase
+    ☐ Wait 30-60 seconds
+    ☐ Open: http://localhost:3000
+    ☐ Create admin account (follow prompts)
+
+  STEP 4.2: Connect Database
+    ☐ Click ⚙️ Admin settings (top-right)
+    ☐ Click "Databases"
+    ☐ Click "Add database"
+    ☐ Select "PostgreSQL"
+    ☐ Fill form:
+      ☐ Name: Amazon Scraper
+      ☐ Host: db._____________________.supabase.co
+      ☐ Port: 5432
+      ☐ Database: postgres
+      ☐ Username: postgres
+      ☐ Password: ______________________________
+      ☐ SSL mode: require ← IMPORTANT!
+    
+    ☐ Click "Save"
+    ☐ Click "Test connection"
+    ☐ Green ✅ "We found some tables!"
+
+  STEP 4.3: Create Test Dashboard
+    ☐ Click "Dashboards"
+    ☐ Click "Create a new dashboard"
+    ☐ Name: "Amazon Data"
+    ☐ Click "Create"
+    ☐ Click "Enter edit mode"
+    ☐ Click "Add a card" → "Metabase query"
+    ☐ Paste: SELECT COUNT(*) FROM products
+    ☐ Click "Visualize"
+    ☐ See number ~30 ✓
+    ☐ Click "Save"
+    ☐ Click "Exit edit mode"
+    ☐ Dashboard shows data ✓
+
+  ✅ PHASE 4 COMPLETE!  Time: ______ minutes  (OPTIONAL)
+
+════════════════════════════════════════════════════════════════════════════════
+
+✅ FINAL VERIFICATION
+
+All Checks:
+  ☐ Extension has settings section
+  ☐ URL + Key entered
+  ☐ Test connection ✅
+  ☐ Scrape completed
+  ☐ Data in Supabase
+  ☐ Dashboard shows data (if Metabase done)
+  ☐ No errors in console
+
+════════════════════════════════════════════════════════════════════════════════
+
+SETUP COMPLETE! 🎉
+
+Total Time: ______ minutes
+Difficulty: Easy ⭐
+Status: ✅ READY FOR USE
+
+Next Step: Scrape more keywords!
+
+════════════════════════════════════════════════════════════════════════════════
+
+IMPORTANT CREDENTIALS (Save in Safe Place)
+
+Supabase URL:
+  https://_____________________.supabase.co
+
+Supabase Anon Key:
+  _______________________________________________________________________
+
+Supabase DB Password:
+  ______________________________
+
+Metabase URL:
+  http://localhost:3000
+
+════════════════════════════════════════════════════════════════════════════════
+
+IF YOU GET STUCK:
+
+Problem: ________________________________________________________________
+
+Check:
+  ☐ Did you copy credentials correctly? (no extra spaces?)
+  ☐ Is URL in correct format? (https://xxxxx.supabase.co)
+  ☐ Did you wait long enough for setup to complete?
+  ☐ Check browser console (F12) for error messages
+
+Solution Tried: ___________________________________________________________
+
+Still stuck? Read: SUPABASE_INTEGRATION_GUIDE.md (Troubleshooting section)
+
+════════════════════════════════════════════════════════════════════════════════
+
+NOTES:
+
+_______________________________________________________________________
+
+_______________________________________________________________________
+
+_______________________________________________________________________
+
+════════════════════════════════════════════════════════════════════════════════
+
+COMPLETED DATE: ________________     COMPLETED TIME: ________________
+
+TOTAL TIME SPENT: ______ hours ______ minutes
+
+READY FOR PRODUCTION: YES / NO
+
+NEXT ACTION: ________________________________________________________________
+
+════════════════════════════════════════════════════════════════════════════════
+
+You did it! 🚀
+
+For guides, see:
+  → ACTION_PLAN.md (next steps)
+  → SETUP_STEP_BY_STEP.md (detailed)
+  → QUICK_REFERENCE.txt (quick lookup)

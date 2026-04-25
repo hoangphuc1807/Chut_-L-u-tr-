@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Scraper - Dashboard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #1a1a2e;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1F4E79, #2e86c1);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .header h1 { font-size: 24px; font-weight: 700; }
+    .header p { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+
+    .sessions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .session-item {
+      background: white;
+      border: 1.5px solid #cdd6e0;
+      border-radius: 8px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .session-item:hover {
+      border-color: #2e86c1;
+      box-shadow: 0 2px 8px rgba(46, 134, 193, 0.1);
+    }
+
+    .session-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .session-title {
+      font-weight: 600;
+      font-size: 13px;
+      color: #1a1a2e;
+    }
+    .session-meta {
+      font-size: 12px;
+      color: #666;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .session-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .session-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .stat-badge {
+      background: #f0f4f8;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      text-align: center;
+    }
+    .stat-badge.valid { background: #d4edda; color: #1a7f37; font-weight: 600; }
+    .stat-badge.invalid { background: #f8d7da; color: #c0392b; font-weight: 600; }
+    .stat-badge.total { background: #cfe2ff; color: #1F4E79; font-weight: 600; }
+
+    .session-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-export {
+      background: #2e86c1;
+      color: white;
+    }
+    .btn-export:hover { opacity: 0.85; }
+
+    .btn-delete {
+      background: #e8e8e8;
+      color: #c0392b;
+    }
+    .btn-delete:hover { background: #d8d8d8; }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      background: white;
+      border-radius: 8px;
+      border: 1.5px dashed #cdd6e0;
+    }
+    .empty-state .icon { font-size: 40px; margin-bottom: 10px; }
+    .empty-state p { color: #666; margin-bottom: 10px; }
+    .empty-state small { color: #999; }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #2e86c1;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <a href="javascript:window.close();" class="back-link">← Quay lại</a>
+
+  <div class="header">
+    <div>
+      <h1>📊 Dashboard</h1>
+      <p>Lịch sử các phiên cào dữ liệu</p>
+    </div>
+  </div>
+
+  <div class="sessions-list" id="sessionsList"></div>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

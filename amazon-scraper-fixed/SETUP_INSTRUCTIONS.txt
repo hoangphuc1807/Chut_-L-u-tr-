@@ -1,0 +1,239 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║        🎉 AMAZON SCRAPER EXTENSION v2.0 - READY TO INSTALL! 🎉          ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+📍 LOCATION
+─────────────────────────────────────────────────────────────────────────────
+   /Users/nguyenphuc/Downloads/amazon-scraper-fixed/
+
+⚡ QUICK SETUP (4 steps, 1 minute)
+─────────────────────────────────────────────────────────────────────────────
+
+   1️⃣  OPEN CHROME EXTENSIONS
+       • Open Chrome browser
+       • Go to: chrome://extensions
+       • (or: Menu > More tools > Extensions)
+
+   2️⃣  ENABLE DEVELOPER MODE
+       • Look at TOP RIGHT corner
+       • Toggle "Developer mode" ON (turns blue)
+
+   3️⃣  LOAD EXTENSION
+       • Click "Load unpacked" button
+       • Navigate to: /Users/nguyenphuc/Downloads/amazon-scraper-fixed/
+       • Click "Select Folder"
+
+   4️⃣  VERIFY & USE
+       • Extension appears in list ✓
+       • Icon shows in toolbar ✓
+       • Click icon to open extension ✓
+       • Ready to scrape! 🚀
+
+📚 DOCUMENTATION
+─────────────────────────────────────────────────────────────────────────────
+
+   📖 INDEX.md ........................... START HERE (documentation map)
+   📖 QUICK_START.md ..................... Installation + first use (⭐ BEST)
+   📖 README.md .......................... Technical overview
+   📖 USER_GUIDE_v2.0.md ................. Complete user manual
+   📖 UPGRADE_SUMMARY.md ................. Feature details
+   📖 IMPLEMENTATION_CHECKLIST.md ........ Technical verification
+
+🔧 VERIFICATION (OPTIONAL)
+─────────────────────────────────────────────────────────────────────────────
+
+   Run this command to verify everything is ready:
+   
+   $ bash INSTALL.sh
+   
+   This will:
+   • Check all files are present
+   • Verify manifest version
+   • Confirm extension integrity
+   • Give you ready-to-go confirmation
+
+✨ WHAT YOU GET
+─────────────────────────────────────────────────────────────────────────────
+
+   ✅ Scrape Amazon products by keyword
+   ✅ Auto-filter unavailable products
+   ✅ Export to Excel (15 columns)
+   ✅ See live statistics while scraping
+   ✅ Save & manage scraping sessions
+   ✅ Re-export sessions anytime
+   ✅ View dashboard with history
+   ✅ Detect Organic vs Sponsored
+   ✅ Track product rank & timestamp
+
+📋 FEATURES
+─────────────────────────────────────────────────────────────────────────────
+
+   NEW vs v1.4:
+   • Availability Filtering ........... NEW ✅
+   • 15-Column Excel .................. NEW ✅ (was 12)
+   • Real-time Stats .................. NEW ✅
+   • Dashboard & Sessions ............. NEW ✅
+   • Re-export Feature ................ NEW ✅
+   • Sponsored Detection .............. NEW ✅
+   • Rank Tracking .................... NEW ✅
+   • Timestamps ........................ NEW ✅
+
+🚀 FIRST USE GUIDE
+─────────────────────────────────────────────────────────────────────────────
+
+   1. Click extension icon (toolbar, top right)
+   2. Enter keywords (one per line):
+      - gifts for mom
+      - gifts for dad
+      - gifts for wife
+   3. Select pages: "3 trang (full)" or "1 trang" for quick test
+   4. Click: 🚀 Bắt đầu cào dữ liệu
+   5. Watch progress with 4 stat boxes
+   6. Excel auto-downloads when done
+   7. Click 📊 Dashboard to see history
+
+📊 STATS BOX EXPLAINED
+─────────────────────────────────────────────────────────────────────────────
+
+   ┌──────────┬──────────┬──────────┬──────────┐
+   │    0     │    0     │    0     │   0/0    │
+   │ Cần      │ Hợp lệ  │ Loại bỏ │ Keywords │
+   │ Verify   │   ✅    │   ❌    │ Progress │
+   └──────────┴──────────┴──────────┴──────────┘
+
+   • Cần Verify: Total products found
+   • Hợp lệ ✅: Products available (passed filter)
+   • Loại bỏ ❌: Products skipped (unavailable)
+   • Keywords Progress: How many keywords done (x/total)
+
+💾 DATA & STORAGE
+─────────────────────────────────────────────────────────────────────────────
+
+   • Sessions auto-saved to browser
+   • Max 50 sessions stored
+   • Each session ~200KB
+   • Total capacity: ~10MB
+   • Sessions persist after restart
+   • Delete anytime from Dashboard
+
+🔒 PRIVACY & SECURITY
+─────────────────────────────────────────────────────────────────────────────
+
+   ✅ All data stored locally (browser only)
+   ✅ No cloud sync or backup
+   ✅ No external API calls
+   ✅ No tracking or analytics
+   ✅ No personal data collected
+   ✅ Sessions can be deleted anytime
+
+⚙️ REQUIREMENTS
+─────────────────────────────────────────────────────────────────────────────
+
+   • Chrome browser (88+) or Edge/Opera
+   • Internet connection
+   • ~10MB storage for 50 sessions
+   • Access to Amazon.com (English version)
+
+🎯 EXPECTED RESULTS
+─────────────────────────────────────────────────────────────────────────────
+
+   Per keyword, per page:
+   • ~30-40 products per page (varies)
+   • ~5-10 seconds per product to fetch
+   • ~80% available, ~20% filtered out
+   • Excel generation: ~5 seconds
+   • Total for 3 keywords, 3 pages: ~30 minutes
+
+🛠️ TROUBLESHOOTING
+─────────────────────────────────────────────────────────────────────────────
+
+   Problem: Extension doesn't appear
+   Solution: Refresh chrome://extensions (F5)
+
+   Problem: Popup is blank
+   Solution: Right-click > Remove, then reload unpacked
+
+   Problem: Scraping is slow
+   Solution: Check internet, close other tabs
+
+   Problem: Excel doesn't download
+   Solution: Check Downloads folder, try Dashboard > Export
+
+   Problem: Dashboard shows no sessions
+   Solution: Refresh page (F5), check scraping completed
+
+   📖 Full troubleshooting in: QUICK_START.md
+
+✅ VERIFICATION CHECKLIST
+─────────────────────────────────────────────────────────────────────────────
+
+   Install:
+   □ Extension appears in chrome://extensions
+   □ Shows as "Amazon Product Scraper" v2.0
+   □ Icon appears in toolbar
+   □ Popup opens when clicked
+   □ No error messages
+
+   First Use:
+   □ Can enter keywords
+   □ Can select number of pages
+   □ Start button works
+   □ Progress bar shows movement
+   □ Stats boxes update
+   □ Excel downloads automatically
+   □ Dashboard button works
+   □ Dashboard shows session
+
+   All Green? You're ready! 🚀
+
+🎓 LEARNING RESOURCES
+─────────────────────────────────────────────────────────────────────────────
+
+   BEGINNER (5 min):
+   1. Read QUICK_START.md
+   2. Install extension
+   3. Start scraping
+
+   INTERMEDIATE (20 min):
+   1. Read USER_GUIDE_v2.0.md
+   2. Try all features
+   3. Use Dashboard
+   4. Explore settings
+
+   ADVANCED (1 hour):
+   1. Read README.md
+   2. Read UPGRADE_SUMMARY.md
+   3. Check IMPLEMENTATION_CHECKLIST.md
+   4. Optimize for your use
+
+📞 QUICK HELP
+─────────────────────────────────────────────────────────────────────────────
+
+   Installation issues .......... QUICK_START.md
+   Usage questions .............. USER_GUIDE_v2.0.md
+   Feature details .............. UPGRADE_SUMMARY.md
+   Technical info ............... README.md
+   Troubleshooting .............. QUICK_START.md
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎊 YOU'RE ALL SET!
+
+   Extension folder: /Users/nguyenphuc/Downloads/amazon-scraper-fixed/
+   Status: ✅ READY TO INSTALL
+   Version: 2.0
+   Release: 2026-04-21
+
+NEXT STEPS:
+   1. Read QUICK_START.md (4 minute read)
+   2. Follow installation steps (1 minute setup)
+   3. Enter keywords and start scraping!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Questions? See INDEX.md for complete documentation map!
+Ready to go? Read QUICK_START.md and install now! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════

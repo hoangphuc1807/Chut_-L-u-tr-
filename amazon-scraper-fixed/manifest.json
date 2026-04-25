@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Amazon Product Scraper",
+  "version": "2.0",
+  "description": "Cào dữ liệu sản phẩm Amazon theo keyword, xuất file Excel, quản lý phiên làm việc",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.amazon.com/*",
+    "https://*.supabase.co/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["libs/xlsx.full.min.js"],
+      "matches": ["https://www.amazon.com/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

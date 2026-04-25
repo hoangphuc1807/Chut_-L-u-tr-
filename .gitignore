@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.localized
+
+# Project-specific ignore
+.obsidian/
+.claude/
+.claudian/
+.git/
+
+# Data files (personal)
+*.numbers
+*.zip
+*.base
+
+# Temporary files
+*~
+*.tmp
+
+# Only include Cao Data Amazon project files
+# Everything else is ignored by default
